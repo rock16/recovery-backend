@@ -23,7 +23,12 @@ func (r *mutationResolver) CreatePoint(ctx context.Context, input *model.NewPoin
 
 // Points is the resolver for the points field.
 func (r *queryResolver) Points(ctx context.Context) ([]*model.Point, error) {
-	panic(fmt.Errorf("not implemented: Points - points"))
+	var points []*model.Point
+	dummyPoint := model.Point{
+		Point: "30",
+	}
+	points = append(points, &dummyPoint)
+	return points, nil
 }
 
 // Mutation returns generated.MutationResolver implementation.
